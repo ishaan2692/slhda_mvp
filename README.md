@@ -89,5 +89,3 @@ print("Batch array shapes:", [arr.shape for arr in batch_arrays])
 3. Dean, J., & Ghemawat, S. (2008). *MapReduce: Simplified data processing on large clusters*.
 4. Nguyen, H. H., et al. (2021). *Memory-Efficient Numerical Data Storage for HPC Simulations*.
 5. Zhao, B., et al. (2019). *Ledger-based metadata management for HPC workflows*.
-
-```
