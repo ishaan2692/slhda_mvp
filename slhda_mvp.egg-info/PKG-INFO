@@ -1,0 +1,8 @@
+Metadata-Version: 2.1
+Name: slhda-mvp
+Version: 0.1.0
+Summary: Scalar-Ledger Hybrid Data Architecture MVP
+Author: Your Name
+License: MIT
+Requires-Python: >=3.9
+License-File: LICENSE
