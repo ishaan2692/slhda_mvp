@@ -1,0 +1,34 @@
+SLHDA_MVP Documentation Summary
+
+Project Overview:
+SLHDA_MVP stands for Scalar-Ledger Hybrid Data Architecture (MVP). It is a high-performance, flexible framework designed for storing numerical data independently of its structure. The framework enables dynamic reconstruction, semantic aliasing, and HPC-grade workflows while maintaining zero-copy memory efficiency. It is particularly suited for multi-scale simulations, tensorized data workflows, and efficient batch retrievals.
+
+Key Features:
+- Contiguous scalar storage: All numerical data is stored as float64 scalars for cache-friendly HPC access.
+- JSON ledger: Stores object metadata, shapes, and semantic tags for reconstruction.
+- Dynamic tensor aliasing: Allows reinterpreting the same scalar block as different tensor shapes without copying data.
+- Semantic querying: Enables retrieval of objects by tags (e.g., "temperature", "pressure").
+- Batch retrieval: Supports efficient extraction of multiple objects in a single operation.
+
+Installation:
+The project can be installed via pip after cloning the repository and running 'pip install -e .' in the project directory. It requires Python >= 3.9 and numpy >= 1.23.
+
+Core Components:
+1. SLHDAMVP Class (store.py): Handles the storage of scalar data in a binary file and metadata in a JSON ledger. Provides methods for storing objects, retrieving them, aliasing (creating new views with different shapes/tags), and querying by tags.
+
+2. Interpreter Class (interpreter.py): Acts as a semantic reconstruction and aliasing layer. Provides higher-level methods for retrieving, reshaping, aliasing, and batch querying objects.
+
+3. Utils (utils.py): Contains utility functions like UUID generation.
+
+Examples and Usage:
+- Quickstart example: Storing a 2x2 grid, retrieving it, and creating a flat vector alias.
+- Multi-scale simulation example: Storing a 4x4 grid and creating aliases as vector or subgrid.
+- Performance: Capable of storing and retrieving 1 million scalars in milliseconds.
+
+The project includes example scripts (demo.py) and a Jupyter notebook (demo_usage.ipynb) demonstrating practical usage, including initialization, storage, aliasing, querying, batch retrieval, and performance testing.
+
+License:
+The project is licensed under the Apache License 2.0.
+
+References:
+The README includes references to books and papers on computer architecture, TensorFlow, MapReduce, and related HPC data storage research.
